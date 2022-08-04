@@ -1,0 +1,505 @@
+> test 10 alice
+tot_lookup time: 388265
+req_prepare_time: 64
+RTT+RD: 187981
+tot_c509_time: 200210
+crypto_time: 188538
+tot_lookup time: 391524
+req_prepare_time: 65
+RTT+RD: 188113
+tot_c509_time: 203336
+crypto_time: 191664
+tot_lookup time: 393558
+req_prepare_time: 65
+RTT+RD: 189136
+tot_c509_time: 204348
+crypto_time: 192676
+tot_lookup time: 389901
+req_prepare_time: 65
+RTT+RD: 188156
+tot_c509_time: 201670
+crypto_time: 189998
+tot_lookup time: 388753
+req_prepare_time: 135
+RTT+RD: 187840
+tot_c509_time: 200768
+crypto_time: 189096
+tot_lookup time: 385789
+req_prepare_time: 86
+RTT+RD: 186074
+tot_c509_time: 199620
+crypto_time: 187947
+tot_lookup time: 390983
+req_prepare_time: 65
+RTT+RD: 189297
+tot_c509_time: 201612
+crypto_time: 189939
+tot_lookup time: 393536
+req_prepare_time: 65
+RTT+RD: 189212
+tot_c509_time: 204249
+crypto_time: 192577
+tot_lookup time: 391580
+req_prepare_time: 65
+RTT+RD: 190897
+tot_c509_time: 200609
+crypto_time: 188936
+tot_lookup time: 387856
+req_prepare_time: 64
+RTT+RD: 186481
+tot_c509_time: 201301
+crypto_time: 189629
+> test 30 alice
+tot_lookup time: 390235
+req_prepare_time: 64
+RTT+RD: 187488
+tot_c509_time: 202673
+crypto_time: 191001
+tot_lookup time: 388688
+req_prepare_time: 64
+RTT+RD: 186499
+tot_c509_time: 202116
+crypto_time: 190444
+tot_lookup time: 389088
+req_prepare_time: 64
+RTT+RD: 189964
+tot_c509_time: 199051
+crypto_time: 187378
+tot_lookup time: 390871
+req_prepare_time: 65
+RTT+RD: 187047
+tot_c509_time: 203749
+crypto_time: 192077
+tot_lookup time: 392173
+req_prepare_time: 65
+RTT+RD: 189800
+tot_c509_time: 202299
+crypto_time: 190626
+tot_lookup time: 390033
+req_prepare_time: 65
+RTT+RD: 186659
+tot_c509_time: 203299
+crypto_time: 191627
+tot_lookup time: 394228
+req_prepare_time: 65
+RTT+RD: 187667
+tot_c509_time: 206486
+crypto_time: 194814
+tot_lookup time: 390792
+req_prepare_time: 64
+RTT+RD: 187341
+tot_c509_time: 203378
+crypto_time: 191706
+tot_lookup time: 388211
+req_prepare_time: 65
+RTT+RD: 187170
+tot_c509_time: 200967
+crypto_time: 189294
+tot_lookup time: 384388
+req_prepare_time: 87
+RTT+RD: 187365
+tot_c509_time: 196926
+crypto_time: 185254
+tot_lookup time: 391916
+req_prepare_time: 64
+RTT+RD: 188905
+tot_c509_time: 202937
+crypto_time: 191265
+tot_lookup time: 402871
+req_prepare_time: 65
+RTT+RD: 199068
+tot_c509_time: 203729
+crypto_time: 192057
+tot_lookup time: 388740
+req_prepare_time: 64
+RTT+RD: 186280
+tot_c509_time: 202386
+crypto_time: 190714
+tot_lookup time: 387400
+req_prepare_time: 64
+RTT+RD: 187723
+tot_c509_time: 199604
+crypto_time: 187932
+tot_lookup time: 388697
+req_prepare_time: 65
+RTT+RD: 185597
+tot_c509_time: 203026
+crypto_time: 191354
+tot_lookup time: 394389
+req_prepare_time: 65
+RTT+RD: 194705
+tot_c509_time: 199609
+crypto_time: 187937
+tot_lookup time: 390312
+req_prepare_time: 65
+RTT+RD: 187833
+tot_c509_time: 202404
+crypto_time: 190732
+tot_lookup time: 389666
+req_prepare_time: 65
+RTT+RD: 186267
+tot_c509_time: 203326
+crypto_time: 191653
+tot_lookup time: 385726
+req_prepare_time: 65
+RTT+RD: 188154
+tot_c509_time: 197498
+crypto_time: 185826
+tot_lookup time: 397355
+req_prepare_time: 65
+RTT+RD: 188283
+tot_c509_time: 208997
+crypto_time: 197325
+tot_lookup time: 390386
+req_prepare_time: 65
+RTT+RD: 187557
+tot_c509_time: 202754
+crypto_time: 191082
+tot_lookup time: 390886
+req_prepare_time: 65
+RTT+RD: 187942
+tot_c509_time: 202869
+crypto_time: 191197
+tot_lookup time: 390839
+req_prepare_time: 64
+RTT+RD: 189303
+tot_c509_time: 201462
+crypto_time: 189790
+tot_lookup time: 388511
+req_prepare_time: 86
+RTT+RD: 187716
+tot_c509_time: 200700
+crypto_time: 189028
+tot_lookup time: 388531
+req_prepare_time: 65
+RTT+RD: 187893
+tot_c509_time: 200564
+crypto_time: 188891
+tot_lookup time: 390406
+req_prepare_time: 65
+RTT+RD: 186543
+tot_c509_time: 203788
+crypto_time: 192116
+tot_lookup time: 392858
+req_prepare_time: 65
+RTT+RD: 186532
+tot_c509_time: 206251
+crypto_time: 194579
+tot_lookup time: 393149
+req_prepare_time: 65
+RTT+RD: 189394
+tot_c509_time: 203680
+crypto_time: 192008
+tot_lookup time: 387058
+req_prepare_time: 65
+RTT+RD: 186806
+tot_c509_time: 200178
+crypto_time: 188506
+tot_lookup time: 392598
+req_prepare_time: 65
+RTT+RD: 189194
+tot_c509_time: 203330
+crypto_time: 191657
+> test 30 alice
+tot_lookup time: 389296
+req_prepare_time: 65
+RTT+RD: 185978
+tot_c509_time: 203244
+crypto_time: 191571
+tot_lookup time: 385553
+req_prepare_time: 65
+RTT+RD: 186242
+tot_c509_time: 199236
+crypto_time: 187564
+tot_lookup time: 395636
+req_prepare_time: 86
+RTT+RD: 190269
+tot_c509_time: 205271
+crypto_time: 193599
+tot_lookup time: 392425
+req_prepare_time: 65
+RTT+RD: 184816
+tot_c509_time: 207535
+crypto_time: 195863
+tot_lookup time: 393316
+req_prepare_time: 64
+RTT+RD: 189948
+tot_c509_time: 203296
+crypto_time: 191624
+tot_lookup time: 392028
+req_prepare_time: 64
+RTT+RD: 189001
+tot_c509_time: 202953
+crypto_time: 191281
+tot_lookup time: 386983
+req_prepare_time: 65
+RTT+RD: 186162
+tot_c509_time: 200746
+crypto_time: 189074
+tot_lookup time: 393877
+req_prepare_time: 65
+RTT+RD: 188256
+tot_c509_time: 205546
+crypto_time: 193874
+tot_lookup time: 391408
+req_prepare_time: 65
+RTT+RD: 185211
+tot_c509_time: 206123
+crypto_time: 194451
+tot_lookup time: 382643
+req_prepare_time: 65
+RTT+RD: 188535
+tot_c509_time: 194033
+crypto_time: 182361
+tot_lookup time: 386368
+req_prepare_time: 64
+RTT+RD: 188117
+tot_c509_time: 198177
+crypto_time: 186505
+tot_lookup time: 388982
+req_prepare_time: 65
+RTT+RD: 188204
+tot_c509_time: 200703
+crypto_time: 189031
+tot_lookup time: 392670
+req_prepare_time: 65
+RTT+RD: 188231
+tot_c509_time: 204364
+crypto_time: 192692
+tot_lookup time: 387543
+req_prepare_time: 87
+RTT+RD: 188494
+tot_c509_time: 198952
+crypto_time: 187280
+tot_lookup time: 391811
+req_prepare_time: 86
+RTT+RD: 187499
+tot_c509_time: 204216
+crypto_time: 192544
+tot_lookup time: 385805
+req_prepare_time: 65
+RTT+RD: 187117
+tot_c509_time: 198615
+crypto_time: 186943
+tot_lookup time: 395140
+req_prepare_time: 65
+RTT+RD: 187105
+tot_c509_time: 207960
+crypto_time: 196288
+tot_lookup time: 388700
+req_prepare_time: 65
+RTT+RD: 186202
+tot_c509_time: 202424
+crypto_time: 190752
+tot_lookup time: 390760
+req_prepare_time: 65
+RTT+RD: 187013
+tot_c509_time: 203673
+crypto_time: 192001
+tot_lookup time: 389926
+req_prepare_time: 65
+RTT+RD: 187270
+tot_c509_time: 202581
+crypto_time: 190909
+tot_lookup time: 387866
+req_prepare_time: 65
+RTT+RD: 188931
+tot_c509_time: 198861
+crypto_time: 187189
+tot_lookup time: 398194
+req_prepare_time: 87
+RTT+RD: 195704
+tot_c509_time: 202393
+crypto_time: 190721
+tot_lookup time: 386186
+req_prepare_time: 65
+RTT+RD: 187403
+tot_c509_time: 198708
+crypto_time: 187036
+tot_lookup time: 389575
+req_prepare_time: 65
+RTT+RD: 187607
+tot_c509_time: 201893
+crypto_time: 190221
+tot_lookup time: 395709
+req_prepare_time: 65
+RTT+RD: 188955
+tot_c509_time: 206680
+crypto_time: 195007
+tot_lookup time: 388105
+req_prepare_time: 65
+RTT+RD: 185621
+tot_c509_time: 202409
+crypto_time: 190737
+tot_lookup time: 396405
+req_prepare_time: 65
+RTT+RD: 194324
+tot_c509_time: 202006
+crypto_time: 190334
+tot_lookup time: 390488
+req_prepare_time: 65
+RTT+RD: 189839
+tot_c509_time: 200575
+crypto_time: 188902
+tot_lookup time: 393085
+req_prepare_time: 64
+RTT+RD: 187736
+tot_c509_time: 205275
+crypto_time: 193603
+tot_lookup time: 385792
+req_prepare_time: 65
+RTT+RD: 186879
+tot_c509_time: 198839
+crypto_time: 187166
+> test 30 alice
+tot_lookup time: 387697
+req_prepare_time: 86
+RTT+RD: 187326
+tot_c509_time: 200275
+crypto_time: 188603
+tot_lookup time: 395240
+req_prepare_time: 65
+RTT+RD: 189913
+tot_c509_time: 205253
+crypto_time: 193581
+tot_lookup time: 384773
+req_prepare_time: 64
+RTT+RD: 186027
+tot_c509_time: 198672
+crypto_time: 187000
+tot_lookup time: 389867
+req_prepare_time: 88
+RTT+RD: 187224
+tot_c509_time: 202546
+crypto_time: 190873
+tot_lookup time: 387044
+req_prepare_time: 65
+RTT+RD: 185546
+tot_c509_time: 201424
+crypto_time: 189752
+tot_lookup time: 387217
+req_prepare_time: 65
+RTT+RD: 188961
+tot_c509_time: 198181
+crypto_time: 186509
+tot_lookup time: 391520
+req_prepare_time: 65
+RTT+RD: 189038
+tot_c509_time: 202407
+crypto_time: 190735
+tot_lookup time: 385965
+req_prepare_time: 65
+RTT+RD: 185199
+tot_c509_time: 200691
+crypto_time: 189019
+tot_lookup time: 388570
+req_prepare_time: 86
+RTT+RD: 186928
+tot_c509_time: 201546
+crypto_time: 189874
+tot_lookup time: 385853
+req_prepare_time: 65
+RTT+RD: 187843
+tot_c509_time: 197936
+crypto_time: 186263
+tot_lookup time: 391370
+req_prepare_time: 65
+RTT+RD: 187103
+tot_c509_time: 204192
+crypto_time: 192520
+tot_lookup time: 390459
+req_prepare_time: 64
+RTT+RD: 187888
+tot_c509_time: 202497
+crypto_time: 190825
+tot_lookup time: 391080
+req_prepare_time: 64
+RTT+RD: 185387
+tot_c509_time: 205619
+crypto_time: 193947
+tot_lookup time: 389439
+req_prepare_time: 64
+RTT+RD: 187097
+tot_c509_time: 202269
+crypto_time: 190597
+tot_lookup time: 385524
+req_prepare_time: 65
+RTT+RD: 186265
+tot_c509_time: 199185
+crypto_time: 187513
+tot_lookup time: 383033
+req_prepare_time: 65
+RTT+RD: 186205
+tot_c509_time: 196754
+crypto_time: 185082
+tot_lookup time: 388440
+req_prepare_time: 88
+RTT+RD: 187801
+tot_c509_time: 200541
+crypto_time: 188869
+tot_lookup time: 400461
+req_prepare_time: 87
+RTT+RD: 197089
+tot_c509_time: 203276
+crypto_time: 191604
+tot_lookup time: 394131
+req_prepare_time: 87
+RTT+RD: 187018
+tot_c509_time: 207017
+crypto_time: 195345
+tot_lookup time: 388227
+req_prepare_time: 64
+RTT+RD: 188021
+tot_c509_time: 200133
+crypto_time: 188460
+tot_lookup time: 392252
+req_prepare_time: 65
+RTT+RD: 188743
+tot_c509_time: 203434
+crypto_time: 191762
+tot_lookup time: 389466
+req_prepare_time: 86
+RTT+RD: 185415
+tot_c509_time: 203956
+crypto_time: 192283
+tot_lookup time: 391299
+req_prepare_time: 86
+RTT+RD: 186272
+tot_c509_time: 204931
+crypto_time: 193259
+tot_lookup time: 391156
+req_prepare_time: 65
+RTT+RD: 188305
+tot_c509_time: 202777
+crypto_time: 191104
+tot_lookup time: 396639
+req_prepare_time: 65
+RTT+RD: 187627
+tot_c509_time: 208937
+crypto_time: 197265
+tot_lookup time: 392032
+req_prepare_time: 87
+RTT+RD: 186211
+tot_c509_time: 205724
+crypto_time: 194052
+tot_lookup time: 386478
+req_prepare_time: 64
+RTT+RD: 186195
+tot_c509_time: 200210
+crypto_time: 188537
+tot_lookup time: 389150
+req_prepare_time: 64
+RTT+RD: 187812
+tot_c509_time: 201264
+crypto_time: 189592
+tot_lookup time: 390320
+req_prepare_time: 65
+RTT+RD: 187661
+tot_c509_time: 202584
+crypto_time: 190912
+tot_lookup time: 391789
+req_prepare_time: 65
+RTT+RD: 186581
+tot_c509_time: 205135
+crypto_time: 193462
+> 

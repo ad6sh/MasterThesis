@@ -1,0 +1,524 @@
+=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2022.07.08 16:23:25 =~=~=~=~=~=~=~=~=~=~=~=
+RQ not implemented by driver
+main(): This is RIOT! (Version: 2022.01)
+wot cert exchange client
+
+All up, running the shell now
+> client -d
+> resource discovery success
+
+rd address :fe80::64ba:7c3a:f137:fe8e
+rd port:5683
+client -r
+> registration success
+
+client -l alice
+> tot_lookup time: 70005
+req_prepare_time: 63
+RTT+RD: 37332
+tot_c509_time: 32601
+crypto_time: 20931
+
+> test alice       50 alice
+tot_lookup time: 66884
+req_prepare_time: 63
+RTT+RD: 34334
+tot_c509_time: 32479
+crypto_time: 20808
+tot_lookup time: 70247
+req_prepare_time: 64
+RTT+RD: 37261
+tot_c509_time: 32914
+crypto_time: 21243
+tot_lookup time: 68661
+req_prepare_time: 64
+RTT+RD: 36362
+tot_c509_time: 32226
+crypto_time: 20556
+tot_lookup time: 65890
+req_prepare_time: 63
+RTT+RD: 33802
+tot_c509_time: 32016
+crypto_time: 20346
+tot_lookup time: 65344
+req_prepare_time: 63
+RTT+RD: 33435
+tot_c509_time: 31838
+crypto_time: 20167
+tot_lookup time: 65453
+req_prepare_time: 64
+RTT+RD: 33375
+tot_c509_time: 32005
+crypto_time: 20335
+tot_lookup time: 69967
+req_prepare_time: 63
+RTT+RD: 37582
+tot_c509_time: 32313
+crypto_time: 20643
+tot_lookup time: 67629
+req_prepare_time: 63
+RTT+RD: 35401
+tot_c509_time: 32157
+crypto_time: 20486
+tot_lookup time: 68617
+req_prepare_time: 63
+RTT+RD: 35982
+tot_c509_time: 32564
+crypto_time: 20893
+tot_lookup time: 67497
+req_prepare_time: 64
+RTT+RD: 35034
+tot_c509_time: 32390
+crypto_time: 20720
+tot_lookup time: 68516
+req_prepare_time: 63
+RTT+RD: 35980
+tot_c509_time: 32464
+crypto_time: 20794
+tot_lookup time: 69299
+req_prepare_time: 63
+RTT+RD: 36682
+tot_c509_time: 32545
+crypto_time: 20875
+tot_lookup time: 66961
+req_prepare_time: 63
+RTT+RD: 34977
+tot_c509_time: 31912
+crypto_time: 20242
+tot_lookup time: 68728
+req_prepare_time: 63
+RTT+RD: 36315
+tot_c509_time: 32341
+crypto_time: 20671
+tot_lookup time: 66255
+req_prepare_time: 63
+RTT+RD: 34020
+tot_c509_time: 32163
+crypto_time: 20493
+tot_lookup time: 68497
+req_prepare_time: 85
+RTT+RD: 36363
+tot_c509_time: 32040
+crypto_time: 20370
+tot_lookup time: 68317
+req_prepare_time: 85
+RTT+RD: 36300
+tot_c509_time: 31923
+crypto_time: 20253
+tot_lookup time: 68636
+req_prepare_time: 63
+RTT+RD: 36360
+tot_c509_time: 32204
+crypto_time: 20534
+tot_lookup time: 69265
+req_prepare_time: 63
+RTT+RD: 36363
+tot_c509_time: 32831
+crypto_time: 21160
+tot_lookup time: 68263
+req_prepare_time: 63
+RTT+RD: 35661
+tot_c509_time: 32529
+crypto_time: 20860
+tot_lookup time: 68582
+req_prepare_time: 63
+RTT+RD: 35982
+tot_c509_time: 32529
+crypto_time: 20858
+tot_lookup time: 68666
+req_prepare_time: 64
+RTT+RD: 35936
+tot_c509_time: 32657
+crypto_time: 20987
+tot_lookup time: 70175
+req_prepare_time: 85
+RTT+RD: 36943
+tot_c509_time: 33138
+crypto_time: 21468
+tot_lookup time: 68307
+req_prepare_time: 63
+RTT+RD: 36042
+tot_c509_time: 32193
+crypto_time: 20523
+tot_lookup time: 66640
+req_prepare_time: 64
+RTT+RD: 34442
+tot_c509_time: 32125
+crypto_time: 20455
+tot_lookup time: 67808
+req_prepare_time: 63
+RTT+RD: 35023
+tot_c509_time: 32714
+crypto_time: 21043
+tot_lookup time: 67330
+req_prepare_time: 63
+RTT+RD: 35038
+tot_c509_time: 32220
+crypto_time: 20550
+tot_lookup time: 69052
+req_prepare_time: 63
+RTT+RD: 36682
+tot_c509_time: 32299
+crypto_time: 20628
+tot_lookup time: 68778
+req_prepare_time: 63
+RTT+RD: 35342
+tot_c509_time: 33364
+crypto_time: 21694
+tot_lookup time: 69125
+req_prepare_time: 63
+RTT+RD: 36580
+tot_c509_time: 32473
+crypto_time: 20803
+tot_lookup time: 68661
+req_prepare_time: 63
+RTT+RD: 36042
+tot_c509_time: 32547
+crypto_time: 20877
+tot_lookup time: 67915
+req_prepare_time: 63
+RTT+RD: 35342
+tot_c509_time: 32501
+crypto_time: 20831
+tot_lookup time: 68823
+req_prepare_time: 64
+RTT+RD: 36634
+tot_c509_time: 32116
+crypto_time: 20446
+tot_lookup time: 69440
+req_prepare_time: 63
+RTT+RD: 37002
+tot_c509_time: 32367
+crypto_time: 20696
+tot_lookup time: 66428
+req_prepare_time: 64
+RTT+RD: 33374
+tot_c509_time: 32982
+crypto_time: 21311
+tot_lookup time: 68653
+req_prepare_time: 63
+RTT+RD: 36301
+tot_c509_time: 32280
+crypto_time: 20610
+tot_lookup time: 69090
+req_prepare_time: 64
+RTT+RD: 35980
+tot_c509_time: 33037
+crypto_time: 21367
+tot_lookup time: 67351
+req_prepare_time: 64
+RTT+RD: 35020
+tot_c509_time: 32259
+crypto_time: 20588
+tot_lookup time: 68781
+req_prepare_time: 63
+RTT+RD: 36362
+tot_c509_time: 32347
+crypto_time: 20677
+tot_lookup time: 69842
+req_prepare_time: 63
+RTT+RD: 36943
+tot_c509_time: 32827
+crypto_time: 21157
+tot_lookup time: 68665
+req_prepare_time: 84
+RTT+RD: 36314
+tot_c509_time: 32258
+crypto_time: 20588
+tot_lookup time: 66668
+req_prepare_time: 85
+RTT+RD: 34014
+tot_c509_time: 32561
+crypto_time: 20890
+tot_lookup time: 68000
+req_prepare_time: 63
+RTT+RD: 35342
+tot_c509_time: 32586
+crypto_time: 20916
+tot_lookup time: 67249
+req_prepare_time: 63
+RTT+RD: 34655
+tot_c509_time: 32523
+crypto_time: 20852
+tot_lookup time: 70524
+req_prepare_time: 63
+RTT+RD: 37900
+tot_c509_time: 32552
+crypto_time: 20882
+tot_lookup time: 69494
+req_prepare_time: 63
+RTT+RD: 37002
+tot_c509_time: 32420
+crypto_time: 20750
+tot_lookup time: 69538
+req_prepare_time: 64
+RTT+RD: 36941
+tot_c509_time: 32524
+crypto_time: 20854
+tot_lookup time: 66711
+req_prepare_time: 63
+RTT+RD: 34395
+tot_c509_time: 32245
+crypto_time: 20574
+tot_lookup time: 66313
+req_prepare_time: 63
+RTT+RD: 34123
+tot_c509_time: 32118
+crypto_time: 20448
+tot_lookup time: 70421
+req_prepare_time: 63
+RTT+RD: 37961
+tot_c509_time: 32389
+crypto_time: 20718
+> test 50 alice
+tot_lookup time: 68774
+req_prepare_time: 63
+RTT+RD: 36041
+tot_c509_time: 32661
+crypto_time: 20991
+tot_lookup time: 69856
+req_prepare_time: 63
+RTT+RD: 36959
+tot_c509_time: 32826
+crypto_time: 21155
+tot_lookup time: 67840
+req_prepare_time: 64
+RTT+RD: 34714
+tot_c509_time: 33054
+crypto_time: 21383
+tot_lookup time: 68546
+req_prepare_time: 63
+RTT+RD: 36301
+tot_c509_time: 32173
+crypto_time: 20503
+tot_lookup time: 70233
+req_prepare_time: 63
+RTT+RD: 37262
+tot_c509_time: 32899
+crypto_time: 21229
+tot_lookup time: 68302
+req_prepare_time: 63
+RTT+RD: 36255
+tot_c509_time: 31975
+crypto_time: 20305
+tot_lookup time: 67832
+req_prepare_time: 63
+RTT+RD: 35083
+tot_c509_time: 32677
+crypto_time: 21007
+tot_lookup time: 67056
+req_prepare_time: 63
+RTT+RD: 34397
+tot_c509_time: 32587
+crypto_time: 20917
+tot_lookup time: 68509
+req_prepare_time: 63
+RTT+RD: 35662
+tot_c509_time: 32776
+crypto_time: 21105
+tot_lookup time: 70212
+req_prepare_time: 84
+RTT+RD: 37642
+tot_c509_time: 32477
+crypto_time: 20807
+tot_lookup time: 66153
+req_prepare_time: 63
+RTT+RD: 34063
+tot_c509_time: 32018
+crypto_time: 20348
+tot_lookup time: 67955
+req_prepare_time: 64
+RTT+RD: 35720
+tot_c509_time: 32163
+crypto_time: 20492
+tot_lookup time: 66883
+req_prepare_time: 64
+RTT+RD: 34394
+tot_c509_time: 32416
+crypto_time: 20746
+tot_lookup time: 67331
+req_prepare_time: 63
+RTT+RD: 35021
+tot_c509_time: 32238
+crypto_time: 20568
+tot_lookup time: 68280
+req_prepare_time: 63
+RTT+RD: 35996
+tot_c509_time: 32213
+crypto_time: 20542
+tot_lookup time: 69560
+req_prepare_time: 63
+RTT+RD: 37003
+tot_c509_time: 32485
+crypto_time: 20815
+tot_lookup time: 68840
+req_prepare_time: 63
+RTT+RD: 35982
+tot_c509_time: 32787
+crypto_time: 21116
+tot_lookup time: 66333
+req_prepare_time: 63
+RTT+RD: 33742
+tot_c509_time: 32519
+crypto_time: 20849
+tot_lookup time: 70417
+req_prepare_time: 84
+RTT+RD: 37901
+tot_c509_time: 32423
+crypto_time: 20753
+tot_lookup time: 67477
+req_prepare_time: 64
+RTT+RD: 34977
+tot_c509_time: 32427
+crypto_time: 20757
+tot_lookup time: 69488
+req_prepare_time: 63
+RTT+RD: 36622
+tot_c509_time: 32794
+crypto_time: 21124
+tot_lookup time: 67894
+req_prepare_time: 63
+RTT+RD: 35724
+tot_c509_time: 32098
+crypto_time: 20428
+tot_lookup time: 70351
+req_prepare_time: 63
+RTT+RD: 37322
+tot_c509_time: 32957
+crypto_time: 21287
+tot_lookup time: 68542
+req_prepare_time: 63
+RTT+RD: 36255
+tot_c509_time: 32216
+crypto_time: 20545
+tot_lookup time: 69097
+req_prepare_time: 63
+RTT+RD: 36682
+tot_c509_time: 32344
+crypto_time: 20673
+tot_lookup time: 69588
+req_prepare_time: 63
+RTT+RD: 36682
+tot_c509_time: 32834
+crypto_time: 21164
+tot_lookup time: 68194
+req_prepare_time: 135
+RTT+RD: 35616
+tot_c509_time: 32434
+crypto_time: 20764
+tot_lookup time: 68102
+req_prepare_time: 84
+RTT+RD: 36301
+tot_c509_time: 31708
+crypto_time: 20038
+tot_lookup time: 70275
+req_prepare_time: 63
+RTT+RD: 37582
+tot_c509_time: 32621
+crypto_time: 20951
+tot_lookup time: 70923
+req_prepare_time: 63
+RTT+RD: 38542
+tot_c509_time: 32310
+crypto_time: 20639
+tot_lookup time: 70153
+req_prepare_time: 63
+RTT+RD: 38282
+tot_c509_time: 31799
+crypto_time: 20129
+tot_lookup time: 67349
+req_prepare_time: 63
+RTT+RD: 35342
+tot_c509_time: 31935
+crypto_time: 20265
+tot_lookup time: 70060
+req_prepare_time: 63
+RTT+RD: 37322
+tot_c509_time: 32667
+crypto_time: 20996
+tot_lookup time: 67869
+req_prepare_time: 63
+RTT+RD: 35662
+tot_c509_time: 32135
+crypto_time: 20465
+tot_lookup time: 67496
+req_prepare_time: 63
+RTT+RD: 34980
+tot_c509_time: 32443
+crypto_time: 20774
+tot_lookup time: 68257
+req_prepare_time: 64
+RTT+RD: 35662
+tot_c509_time: 32523
+crypto_time: 20852
+tot_lookup time: 67524
+req_prepare_time: 64
+RTT+RD: 35355
+tot_c509_time: 32097
+crypto_time: 20426
+tot_lookup time: 68427
+req_prepare_time: 63
+RTT+RD: 35678
+tot_c509_time: 32677
+crypto_time: 21007
+tot_lookup time: 67635
+req_prepare_time: 85
+RTT+RD: 35083
+tot_c509_time: 32458
+crypto_time: 20788
+tot_lookup time: 66647
+req_prepare_time: 64
+RTT+RD: 34079
+tot_c509_time: 32495
+crypto_time: 20825
+tot_lookup time: 67872
+req_prepare_time: 63
+RTT+RD: 35036
+tot_c509_time: 32765
+crypto_time: 21094
+tot_lookup time: 67413
+req_prepare_time: 63
+RTT+RD: 35022
+tot_c509_time: 32319
+crypto_time: 20649
+tot_lookup time: 66104
+req_prepare_time: 63
+RTT+RD: 33757
+tot_c509_time: 32275
+crypto_time: 20605
+tot_lookup time: 69154
+req_prepare_time: 63
+RTT+RD: 36942
+tot_c509_time: 32140
+crypto_time: 20470
+tot_lookup time: 69846
+req_prepare_time: 63
+RTT+RD: 37321
+tot_c509_time: 32454
+crypto_time: 20783
+tot_lookup time: 69052
+req_prepare_time: 63
+RTT+RD: 36302
+tot_c509_time: 32678
+crypto_time: 21008
+tot_lookup time: 69592
+req_prepare_time: 63
+RTT+RD: 36941
+tot_c509_time: 32580
+crypto_time: 20909
+tot_lookup time: 70061
+req_prepare_time: 63
+RTT+RD: 37901
+tot_c509_time: 32088
+crypto_time: 20418
+tot_lookup time: 67797
+req_prepare_time: 63
+RTT+RD: 35083
+tot_c509_time: 32642
+crypto_time: 20972
+tot_lookup time: 67913
+req_prepare_time: 84
+RTT+RD: 35343
+tot_c509_time: 32477
+crypto_time: 20807
+> 
