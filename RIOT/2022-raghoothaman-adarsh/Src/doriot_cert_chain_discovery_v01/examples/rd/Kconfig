@@ -1,0 +1,27 @@
+menuconfig KCONFIG_WOT_RD_APP
+    bool "Configure Doriot WoT RD App"
+    default y
+    help
+        This will enable configuring the WoT RD App"	
+
+if KCONFIG_WOT_RD_APP
+
+config WOT_RD_COMMON_NAME
+    string "name of the resource directory"
+    default "rd1cn"
+
+config WOT_CLIENT_CERT_URI
+    string "coap uri for handling client certificate"
+    default "/cli/cert"
+    
+config WOT_RD_CERT_URI
+    string "coap uri for handling rd certificate"
+    default "/rd/cert"
+
+config GCOAP_PORT
+    int "coap port for communicating with resource directory"
+    default 5684   
+
+endif #KCONFIG_WOT_RD_APP
+
+

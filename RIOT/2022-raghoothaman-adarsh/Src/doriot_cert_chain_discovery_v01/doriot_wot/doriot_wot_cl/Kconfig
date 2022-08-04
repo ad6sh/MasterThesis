@@ -1,0 +1,27 @@
+menuconfig KCONFIG_WOT_CL
+    bool "Configure Doriot WoT client"
+    default y
+    help
+        This will enable configuring the WoT client	
+
+if KCONFIG_WOT_CL
+
+config WOT_CL_COMMON_NAME
+    string "name of the client"
+    default "alice"    
+
+config WOT_CLIENT_CERT_URI
+    string "coap uri for handling client certificate"
+    default "/cli/cert"
+    
+config WOT_RD_CERT_URI
+    string "coap uri for handling rd certificate"
+    default "/rd/cert"
+
+config GCOAP_PORT
+    int "coap port for communicating with resource directory"
+    default 5684    
+
+endif #KCONFIG_WOT_CL
+
+

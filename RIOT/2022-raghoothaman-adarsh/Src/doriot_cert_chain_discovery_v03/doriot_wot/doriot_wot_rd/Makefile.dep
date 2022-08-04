@@ -1,0 +1,14 @@
+ifneq (,$(filter doriot_wot_rd,$(USEMODULE)))
+
+	USEMODULE += netdev_default
+	USEMODULE += auto_init_gnrc_netif
+	USEMODULE += gnrc_ipv6_default
+	USEMODULE += gcoap
+	USEPKG += tinycbor
+	USEMODULE += tinycbor_float	
+	USEMODULE += hashes
+	USEMODULE += crypto_aes_256
+	USEPKG += micro-ecc
+	
+endif
+

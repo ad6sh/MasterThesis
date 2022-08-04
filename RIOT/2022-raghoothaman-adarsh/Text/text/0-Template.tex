@@ -1,0 +1,194 @@
+%!TEX root =../main.tex 
+\setcounter{chapter}{-1} % <-- Work around so that the template chapter gets number 0.
+\chapter{The ComSys Template}
+\label{chap:template}
+
+This chapter explains \textbf{how} to write a thesis in \LaTeX.
+The following chapters give the base structure to use.
+Also, they give some hints on \textbf{what} to write in a thesis.
+
+\section{General Rules}
+\label{sec:general_rules}
+%==============================================================================
+This \gls{ComSys} \LaTeX template \textbf{must} be used for all theses (Bachelor and Master) of the \gls{ComSys} work group.
+Additionally, the following rules have to be followed:
+\begin{enumerate}
+	\item Without permission of your supervisor, do not add, remove, reorder or rename the chapter titles (\texttt{\textbackslash{}chapter} command)!
+	\item Please extend, rename and improve the sections (\texttt{\textbackslash{}section} command), subsections (\texttt{\textbackslash{}subsection} command) and subsubsections.
+	\item Use \texttt{make} to generate the PDF
+	\begin{itemize}
+		\item You can use the PCs in the MIoT-Lab (building 29, room 321), which have all required tools installed
+		\item You can use your own PC, but you should have to use a POSIX-compliant OS (Linux, Mac OS (X), FreeBSD, ...) with GNU Make and \texttt{texlive-full} installed.
+		You may need to install \texttt{latexmk}~\cite{latexmk} as well.
+		For building the glossary a local or global \texttt{.latexmkrc} file is needed, see \href{https://www.ctan.org/texarchive/support/latexmk/example_rcfiles}{glossary\_latexmkrc}.
+	\end{itemize}
+	\item \textit{\textbf{\textsc{Never ever ever commit temporary files!}}}
+	\begin{itemize}
+		\item All files with the extensions \texttt{.aux}, \texttt{.log}, \texttt{.synctex}, \texttt{.synctex.gz}, \texttt{.toc}, \texttt{.bbl}, etc. and \textbf{the generated PDF} can be re-build from source and \textbf{must not} be commited to the repositry
+		\item Running \texttt{make clean} will clear all temporary files
+		\item You can use the \texttt{global-ignores} feature in the subversion configuration of your machine to prevent temporary files from uploading
+		\item Run \texttt{svn status} before running \texttt{svn commit} to check if no temporary files is going to be commited
+	\end{itemize}
+	\item Check using \texttt{svn status} if all sources files are added to the repository before commiting
+	\item Check that \texttt{make} is running without errors before commiting
+	\item Commit often: This fights data losses and allows you to revert changes if needed
+	\item Use \texttt{svn mv} instead of \texttt{mv}, \texttt{svn cp} instead of \texttt{cp} and \texttt{svn rm} instead of \texttt{rm} within the Repository
+	\item Prefer vector graphics (\texttt{.svg}, \texttt{.eps}, \texttt{.pdf}) over \texttt{.png}, \texttt{.bmp}, \texttt{.jpg}
+	\begin{itemize}
+		\item \LaTeX cannot directly use \texttt{.svg} vector graphics, but you can convert them to vectorized \texttt{.pdf} files using \href{http://www.inkscape.org/}{Inkscape}
+		\item You can directly create vectorized graphics in \LaTeX using TikZ, e.g. see \href{http://www.texample.net/tikz/}{these examples}
+	\end{itemize}
+    \item Use a seperate line for each sentence in your \texttt{.tex} files (for version control)
+	\item Add papers, websites and other sources to \texttt{bib/bibliography.bib}
+	\begin{itemize}
+		\item Instead of working with the source, you can use \href{http://jabref.sourceforge.net/}{JabRef} to graphically edit these files
+		\item Most papers have a \gls{DOI}, which enabled you to use \href{https://doi2bib.org/}{doi2bib.org} to look up a BibTeX entry
+		\item Most journals and conferences allow you to download a BibTeX entry free of charge
+		\item For RFCs BibTeX entries are also provided online
+	\end{itemize}
+	\item Style of floats (\texttt{figure}, \texttt{table}, \ldots)
+	\begin{itemize}
+		\item They are in general best placed on top of a page (\texttt{[t]})
+		\item Huge floats are best placed as a single page (\texttt{[p]})
+		\item Try to use \texttt{[width=\textbackslash{}linewidth]} whenever possible
+		\item \textbf{Always} provide a \texttt{caption} describing short and precisely \textbf{what} the figure/table is showing
+		\item Add a legend if further explanation is needed on \texttt{how} this is shown
+	\end{itemize}
+	\item Use \texttt{lstinputlisting} to include source code from an external file (or the \texttt{lstlisting} environment for short listings)
+	\item You need to build the glossary and bibliography manually if you do not use the provided Makefile.
+	The command \texttt{makeindex} is used for generating the glossary, after you built your latex document once.
+	The workflow is the following:
+	\begin{itemize}
+	 \item build your latex document
+	 \item build your list of glossaries 
+        \begin{verbatim}
+        makeindex -s main.ist -t main.glg -o main.gls main.glo
+        \end{verbatim}
+        build your list of acronyms
+        \begin{verbatim}
+        makeindex -s main.ist -t main.alg -o main.acr main.acn
+        \end{verbatim}
+    \item build your bibliography
+    \item build your latex document (x2)
+	\end{itemize}
+\end{enumerate}
+
+\section{\LaTeX Examples}
+
+This template includes examples for the following items:
+
+\begin{itemize}
+    \item Enumerations, like used here
+	\item Numbered lists in Section~\ref{subsec:numbered_lists}
+	\item Tables in Section~\ref{subsec:tables}
+	\item Figures in Section~\ref{subsec:figures}
+    \item Byte fields in Section~\ref{subsec:byte_fields}
+	\item Math mode with over multiple lines in Section~\ref{subsec:math_mode_multiple}
+	\item Source code in Section~\ref{sec:sourcecode}
+	\item Citing a literature entry on Page~\pageref{cha:introduction}
+	\item Acronyms and glossary, used for instance in Chapter~\ref{cha:introduction} and defined in \texttt{text/glossary.tex}.
+	For more information please take a look at the package \texttt{glossaries}.
+	\item References to sections, figures, source code, tables etc. can be found throughout this document
+	\item Math mode within a line: $\exists x \in \{1,\frac{3}{2},2,\ldots,9\}$
+	\item An annotation with the Todo-package \todo{this is an example of todo} is shown here
+\end{itemize}
+
+\subsection{Numbered Lists}
+\label{subsec:numbered_lists}
+
+\begin{enumerate}
+	\item This is the first item
+	\item This is a second
+	\item This one has sub-items:
+	\begin{enumerate}
+		\item Subitem 1
+		\item Subitem 2
+	\end{enumerate}
+	\item This is the last item
+\end{enumerate}
+
+\subsection{Tables}
+\label{subsec:tables}
+
+\begin{table}[t]
+ \begin{tabular}{L{0.25}*{3}{R{0.25}}}
+  \toprule
+  First Column & Second Column & Third Column & Fourth Column \\
+  \midrule
+  first line & some content & ... & ... \\
+  second line & other content & ... & ... \\
+  \bottomrule
+  \end{tabular}
+  \caption{Example Table}
+  \label{table:example}
+\end{table}
+
+An example table is shown in Table~\ref{table:example}.
+Take care that the column sizes add up to \texttt{1}.
+
+
+\subsection{Figures}
+\label{subsec:figures}
+
+\begin{figure}
+ \centering
+ \includegraphics[width=0.2\linewidth]{graphics/smiley}
+ \caption{Example Figure}
+ \label{fig:example}
+\end{figure}
+
+An example figure is shown in Figure~\ref{fig:example}.
+
+
+\subsection{Byte Fields}
+\label{subsec:byte_fields}
+
+\begin{figure}[t]
+\centering
+\begin{bytefield}{32}
+\bitheader{0, 15, 31} \\
+\begin{leftwordgroup}{Header}
+\bitbox{16}{Source} & \bitbox{16}{Destination} \\
+\bitbox{16}{Length} & \bitbox{16}{Checksum} 
+\end{leftwordgroup} \\
+\begin{leftwordgroup}{Payload}
+\wordbox[lrt]{1}{Data} \\
+\skippedwords \\
+\wordbox[lrb]{1}{}
+\end{leftwordgroup} \\
+\end{bytefield}
+\caption{Example Byte Field}
+\label{fig:bytefield:example}
+\end{figure}
+
+An example byte field is shown in Figure~\ref{fig:bytefield:example}.
+
+\subsection{Math Mode Over Multiple Lines}
+\label{subsec:math_mode_multiple}
+In the following, an example for consecutive equations without numbering is shown.
+For equations with numbering use the \texttt{align} environment.
+
+\begin{align*}
+0       &= ax^2 + bx^2 + c & (a \neq 0) \\
+x_{1,2} &= \frac {-b \pm \sqrt{b^2 - 4ac}}{2a} \\
+\end{align*}
+
+\newpage
+\section{Further Documentation}
+We collected further documents on the work with Latex on our homepage, which can be found 
+\href{http://www.comsys.ovgu.de/THESIS/Technical+Writing+and+Presentation.html}{\texttt{here}}.
+In general, Latex packages an their documentation can be found on \href{http://www.ctan.org/}{Comprehensive TeX Archive Network}.
+
+
+Links to the most important packages:
+\begin{itemize}
+	\item \href{http://tug.ctan.org/cgi-bin/ctanPackageInformation.py?id=bytefield}{bytefield - Create illustrations for network protocol specifications}
+	\item \href{http://tug.ctan.org/cgi-bin/ctanPackageInformation.py?id=colortbl}{colortbl - Add colour to LaTeX tables}
+	\item \href{http://tug.ctan.org/cgi-bin/ctanPackageInformation.py?id=eqnarray}{eqnarray - More generalised equation arrays with numbering}
+	\item \href{http://tug.ctan.org/cgi-bin/ctanPackageInformation.py?id=glossaries}{glossaries - Create glossaries and lists of acronyms}
+	\item \href{http://tug.ctan.org/cgi-bin/ctanPackageInformation.py?id=graphicx}{graphicx - Enhanced support for graphics}
+	\item \href{http://tug.ctan.org/cgi-bin/ctanPackageInformation.py?id=listings}{listings - Typeset source code listings using LaTeX}
+	\item \href{http://tug.ctan.org/cgi-bin/ctanPackageInformation.py?id=pdflscape}{pdflscape - Make landscape pages display as landscape}
+	\item \href{http://tug.ctan.org/cgi-bin/ctanPackageInformation.py?id=supertabular}{supertabular - A multi-page tables package}
+	\item \href{http://tug.ctan.org/cgi-bin/ctanPackageInformation.py?id=xcolor}{xcolor - Driver-independent color extensions for LaTeX and pdfLaTeX}
+\end{itemize}

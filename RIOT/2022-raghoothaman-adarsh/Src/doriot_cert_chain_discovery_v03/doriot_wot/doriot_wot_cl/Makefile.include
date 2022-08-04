@@ -1,0 +1,2 @@
+USEMODULE_INCLUDES_doriot_wot_cl := $(LAST_MAKEFILEDIR)/include
+USEMODULE_INCLUDES += $(USEMODULE_INCLUDES_doriot_wot_cl)

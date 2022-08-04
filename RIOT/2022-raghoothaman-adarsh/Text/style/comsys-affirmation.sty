@@ -1,0 +1,26 @@
+%% ComSys Group Otto-von-Guericke-University Magdeburg, www.comsys.ovgu.de
+%% comsys-affirmation
+\ProvidesPackage{comsys-affirmation}[2015/01/01 v1.0 ComSys thesis affirmation]
+
+\newcommand{\affirmation}{%
+	{%
+	\vspace*{\fill}%
+	\noindent%    
+	{%
+		\iflanguage{ngerman}{
+			Hiermit versichere ich, dass die vorliegende Arbeit mit dem Titel \textit{\THETITLE} selbstständig verfasst worden ist, dass keine anderen Quellen und Hilfsmittel als die angegebenen benutzt worden sind und dass die Stellen der Arbeit, die anderen Werken~-- auch elektronischen Medien~-- dem Wortlaut oder Sinn nach entnommenen wurden, auf jeden Fall unter Angabe der Quelle als Entlehnung kenntlich gemacht worden sind.
+		}{
+			I herewith assure that I wrote the present thesis titled \textit{\THETITLE} independently, that the thesis has not been partially or fully submitted as graded academic work and that I have used no other means than the ones indicated.
+			I have indicated all parts of the work in which sources are used according to their wording or to their meaning.
+
+			I am aware of the fact that violations of copyright can lead to injunctive relief and claims for damages of the author as well as a penalty by the law enforcement agency.
+		}
+		\\[10ex]
+		Magdeburg, \today%
+		\hfill%
+		\parbox[t]{13em}{\hrulefill \\[0.5ex] \centering\smash{(\@author)}}%
+	}%
+	\vspace*{\fill}}%
+}
+
+\endinput

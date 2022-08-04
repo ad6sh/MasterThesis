@@ -1,0 +1,50 @@
+# AFL-network data and comparison to the original network.
+
+# Number of nodes in the network=2200
+# Radio range=250
+# Used distance metric=Euclidian
+# The generation seed=0
+# Used AFL distance metric=Hop
+# Real width of the distribution area=5897
+# Real height of the distribution area=5890
+# Average density of the original network=6.5477359714756811523e-05
+# Average density of the localized network=2.3485719785642845031e-05
+# The numbers of the nodes building the AFL own coordinate system:
+#    west=733
+#    east=165
+#    north=35
+#    south=260
+#    center=1349
+# System energy=744442560
+# Cumulated euclidian distance between the real and computed nodes positions=9619495
+# Average euclidian distance between the real and computed nodes positions=4372.49755859375
+# Average percentage error of distances=65.13690948486328125%
+# Maximum distance error=13348.9833984375
+# GER=0.00066384125966578722
+# Number of false negative edge matches=8008
+# Number of false positive edge matches=8497
+# False negative ratio=30.249689102172851562%
+# False positive ratio=31.5147247314453125%
+# Edge distance ratio=0.68233495950698852539%
+
+# Each line represents a complete data record for one node.
+# The meanings of the columns are as follows:
+# column 1: computed x-coordinate
+# column 2: computed y-coordinate
+# column 3: computed polar distance
+# column 4: computed polar angle
+# column 5: computed virtual x-coordinate
+# column 6: computed virtual y-coordinate
+# column 7: real x-coordinate
+# column 8: real y-coordinate
+
+1779.76  5587.24   3107.87 0.431   2824.22     1297.18      3846 5026
+2137.6   6189.21   3514.41 0.258   3398.26     896.058      1941 424 
+4209.75  5718.62   3000    -0.388  2776.64     -1135.9      3596 840 
+-2596.46 4708.54   6159.51 1.19    2269.54     5726.14      511  1688
+3958.93  7298.5    4484.04 -0.225  4370.69     -1001.87     2197 5230
+5782.64  4008.07   2750    -1.22   955.114     -2578.81     5242 1802
+7090.65  8100.73   6474.24 -0.703  4940.57     -4184.09     508  5582
+3552.15  3179.78   414.699 -0.786  292.998     -293.475     5549 2834
+
+...

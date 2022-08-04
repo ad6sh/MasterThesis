@@ -1,0 +1,3 @@
+MODULE = doriot_wot
+
+include $(RIOTBASE)/Makefile.base

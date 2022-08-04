@@ -1,0 +1,42 @@
+# AFL-network data and comparison to the original network.
+
+# Number of nodes in the network=2200
+# Radio range=250
+# Used distance metric=Euclidian
+# The generation seed=0
+# Used AFL distance metric=Hop
+# Real width of the distribution area=5897
+# Real height of the distribution area=5890
+# Average density of the original network=6.5477359714756811523e-05
+# Average density of the localized network=2.3485719785642845031e-05
+# The numbers of the nodes building the AFL own coordinate system:
+#    west=733
+#    east=165
+#    north=35
+#    south=260
+#    center=1349
+# System energy=744442560
+# Cumulated euclidian distance between the real and computed nodes positions=9619495
+# Average euclidian distance between the real and computed nodes positions=4372.49755859375
+# Average percentage error of distances=65.13690948486328125%
+# Maximum distance error=13348.9833984375
+# GER=0.00066384125966578722
+# Number of false negative edge matches=8008
+# Number of false positive edge matches=8497
+# False negative ratio=30.249689102172851562%
+# False positive ratio=31.5147247314453125%
+# Edge distance ratio=0.68233495950698852539%
+
+# Each line represents a complete data record for one node.
+# The meanings of the columns are as follows:
+# column 1: computed x-coordinate
+# column 2: computed y-coordinate
+# column 3: real x-coordinate
+# column 4: real y-coordinate
+
+1779.76  5587.24   3846 5026
+2137.6   6189.21   1941 424 
+4209.75  5718.62   3596 840 
+-2596.46 4708.54   511  1688
+
+...

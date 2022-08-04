@@ -1,0 +1,109 @@
+\documentclass[
+	%ngerman, %<-- Uncomment for German thesis
+	english, %<-- Comment out for German thesis
+	paper=a4,
+	11pt,
+	twoside, %<-- You may use "onside" instead of "twoside" during writing.
+%	oneside, %<-- The final printed version *MUST* be "twoside"!
+	openright,
+	BCOR=7mm,
+	DIV12,
+	headinclude=false,
+	listof=totoc,
+	index=totoc,
+	bibliography=totoc,
+	headinclude=false
+]{scrreprt}
+
+\usepackage[
+%	ngerman, %<-- Uncomment for German thesis
+	english, %<-- Comment out for German thesis
+	studentnumber, %<-- Comment out for online version. (Printed version *MUST* include student number!)
+	%notodos %<-- Uncomment for final version (or to get an idea how it looks without todos)
+]{style/comsys-format}
+
+\title{Implementation of a LaTeX Style for Diploma, Bachelor, and Master Theses}
+\author{Erika Musterfrau}
+\matrikelno{123456}
+\thesis{Sisyphusarbeit} %<-- "Bachelor Thesis"/"Bacheloarbeit" or "Master Thesis"/"Masterarbeit"
+\assistentName{MSc. Max Mustermann}
+\date{02. Februar 2222}
+
+\automark[section]{chapter}
+%Declare new math operators
+\DeclareMathOperator{\dom}{dom}
+%Help Latex with hyphenation
+\hyphenation{Staats-ver-trag Stau-be-cken ge-sam-melt}
+%Theorem, Satz..
+\newtheorem{theorem}{Theorem}
+\newtheorem{satz}{Satz}
+
+\begin{document}
+	%===================================
+	%Print a todo-list if necessary
+	%===================================
+	\listoftodos
+
+	%===================================
+	% Titlepage
+	%===================================
+	\pagenumbering{roman}
+
+	% Titelblatt
+	\maketitle
+	\cleardoublepage
+
+	%===================================
+	% Official parts
+	%===================================
+	\input{text/abstract}
+	\cleardoublepage
+
+	\tableofcontents
+	\listoffigures
+	\listoftables
+	\lstlistoflistings
+	\printglossary[type=acronym]
+	\printglossary
+
+	\cleardoublepage
+	\pagenumbering{arabic}
+
+	%===================================
+	% Main part of the text
+	%===================================
+	\input{text/0-Template} %%% read this!!!
+	\input{text/1-introduction}
+	\input{text/2-related-work}
+	\input{text/3-implementation}
+	\input{text/4-experiments}
+	\input{text/5-evaluation}
+	\input{text/6-conclusion}
+
+	\appendix
+	%===================================
+	% Bibliography, insert via bibtex
+	%===================================
+	\ifdefined\usebusybiber
+		\printbibliography
+	\else
+		\bibliographystyle{unsrt}
+		\bibliography{bib/bibliography}
+	\fi
+	%===================================
+	% Appendix part, e.g. sourcecode
+	%===================================
+	\rehead{\appendixname}
+	\addcontentsline{toc}{chapter}{\appendixname}
+	\stepcounter{chapter}
+	\chapter*{\appendixname}
+
+	\input{text/A-Appendix}
+
+	%===================================
+	% Offical part 3
+	%===================================
+	\cleardoublepage
+	\pagestyle{empty}
+	\affirmation
+\end{document}
