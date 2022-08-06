@@ -1,0 +1,39 @@
+menuconfig KCONFIG_WOT_RD
+    bool "Configure Doriot WoT Resource directory"
+    default y
+    help
+        This will enable configuring the WoT Resource directory 	
+
+if KCONFIG_WOT_RD
+
+config WOT_RD_COMMON_NAME
+    string "name of the resource directory"
+    default "rd1cn_km" 
+
+config WOT_CLIENT_CERT_URI
+    string "coap uri for handling client certificate during registration"
+    default "/cl/cert"
+    
+config WOT_RD_CERT_URI
+    string "coap uri for handling rd certificate during registration"
+    default "/rd/cert"
+
+config WOT_LOOKUP_CERT_URI
+    string "coap uri for handling  certificate during lookup"
+    default "/lookup/cert"
+
+config GCOAP_PORT
+    int "coap port for communicating with resource directory"
+    default 5683
+
+config WOT_AUTH_TYPE
+    int "authentication between client and rd;0:PSK,1:ROOT,2:OOB"
+    default 0
+
+config WOT_USE_CRYPTO_CELL
+    bool "use hardware accelerators for crypto"
+    default y
+
+endif #KCONFIG_WOT_RD
+
+
