@@ -32,7 +32,7 @@ config WOT_AUTH_TYPE
 
 config WOT_USE_CRYPTO_CELL
     bool "use hardware accelerators for crypto"
-    default y
+    default n
 
 endif #KCONFIG_WOT_RD
 

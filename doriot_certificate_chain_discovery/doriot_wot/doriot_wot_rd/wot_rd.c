@@ -22,7 +22,7 @@
 #include "wot_auth.h"
 #include "wot_list.h"
 
-#define ENABLE_DEBUG 1
+#define ENABLE_DEBUG 0
 #include "debug.h"
 
 static ssize_t _encode_link(const coap_resource_t *resource, char *buf,
@@ -117,8 +117,6 @@ static ssize_t _rd_cert_handler(coap_pkt_t *pdu, uint8_t *buf, size_t len, void 
     (void)ctx;
     DEBUG("---received cert request from client---");
     /*creating cbor client cert*/
-    //uint8_t c_buf[CBOR_BUFSIZE];
-    //memset(c_buf, 0, CBOR_BUFSIZE);
     uint8_t *rd_c_buf = (uint8_t *)calloc(CBOR_BUFSIZE, sizeof(uint8_t));
     int cbor_len = wot_get_cbor_certificate_rd(rd_c_buf);
 
@@ -143,17 +141,11 @@ static ssize_t _rd_cert_handler(coap_pkt_t *pdu, uint8_t *buf, size_t len, void 
 }
 
 /*--------------------------lookup interface----------------------------*/
-uint32_t count_lkup=0;
-uint32_t c509_start_time[50];
-uint32_t c509_end_time[50];
-//extern uint32_t crypto_start_time[100];
-//extern uint32_t crypto_end_time[100]; 
 
 static ssize_t _lookup_cert_handler(coap_pkt_t *pdu, uint8_t *buf, size_t len, void *ctx)
 {
     (void)ctx;
     DEBUG("---received cert lookup request from client---\n");
-    c509_start_time[count_lkup]=xtimer_now_usec();
 
     char client_name[NAME_MAX_LEN] = { 0 };
     char lookup_name[NAME_MAX_LEN] = { 0 };
@@ -172,8 +164,6 @@ static ssize_t _lookup_cert_handler(coap_pkt_t *pdu, uint8_t *buf, size_t len, v
                     coap_opt_add_format(pdu, COAP_FORMAT_CBOR);
                     size_t resp_len = coap_opt_finish(pdu, COAP_OPT_FINISH_PAYLOAD);
                     
-                    c509_end_time[count_lkup]=xtimer_now_usec();
-                    count_lkup++;
                     //write the cbor cert in the response buffer
                     if (pdu->payload_len >= cbor_len) {
                         memcpy(pdu->payload, c_buf, cbor_len);

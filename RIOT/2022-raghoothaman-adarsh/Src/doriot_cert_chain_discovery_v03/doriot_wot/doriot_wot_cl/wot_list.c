@@ -16,17 +16,6 @@
 //static list_node_t head = { .next = NULL };
 static list_node_t head;
 
-
-static void _print_hex(char *str, uint8_t *buf, unsigned int size)
-{
-    printf("%s ", str);
-    for (unsigned i = 0; i < size; ++i) {
-        printf("%02X ", (unsigned)buf[i]);
-    }
-    puts("\n\n");
-}
-
-
 wot_cert_t *wot_cert_add(char *name, int name_len, uint8_t *pubkey)
 {
     wot_cert_t *node = (wot_cert_t *)calloc(1, sizeof(wot_cert_t));

@@ -23,14 +23,12 @@ static msg_t _main_msg_queue[MAIN_QUEUE_SIZE];
 extern int client_cmd_app(int argc, char **argv);
 extern int find_cert_cmd_app(int argc, char **argv);
 extern int delete_cert_cmd_app(int argc, char **argv);
-extern int test_cmd_app(int argc, char **argv);
 
 
 static const shell_command_t shell_commands[] = {
     { "client", "client commands app", client_cmd_app },
     { "find", "find cert from list", find_cert_cmd_app },
     { "del", "delete a cert from list", delete_cert_cmd_app },
-    { "test", "test command", test_cmd_app },
     { NULL, NULL, NULL }
 };
 

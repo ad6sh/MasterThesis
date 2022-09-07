@@ -22,16 +22,12 @@ static msg_t _main_msg_queue[MAIN_QUEUE_SIZE];
 extern int rd_start_cmd_app(int argc, char **argv);
 extern int find_cert_cmd_app(int argc, char **argv);
 extern int delete_cert_cmd_app(int argc, char **argv);
-extern int add_cert_cmd_app(int argc, char **argv);
-extern int print_time(int argc, char **argv);
 
 
 static const shell_command_t shell_commands[] = {
     { "rd", "start resource directory", rd_start_cmd_app },
     { "find", "find cert from list", find_cert_cmd_app },
     { "del", "delete a cert from list", delete_cert_cmd_app },
-    { "add", "add a cert to list", add_cert_cmd_app },
-    { "time", "print time", print_time },
     { NULL, NULL, NULL }
 };
 
@@ -72,7 +68,7 @@ int main(void)
     wot_credentials_t credentials;
     _set_credentials(&credentials);
     wot_provision_keys(&credentials);
-    wot_rd_start();
+    //wot_rd_start();
 
     /* for the thread running the shell */
     msg_init_queue(_main_msg_queue, MAIN_QUEUE_SIZE);

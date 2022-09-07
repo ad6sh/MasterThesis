@@ -28,7 +28,7 @@ config WOT_AUTH_TYPE
 
 config WOT_STORE_LOOKUP_CERT
     bool "store lookup certificates in the list"
-    default n
+    default y
 
 config WOT_USE_CRYPTO_CELL
     bool "use hardware accelerators for crypto"

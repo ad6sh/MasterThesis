@@ -22,7 +22,7 @@
 #include "wot_auth.h"
 #include "wot_client.h"
 
-#define ENABLE_DEBUG 1
+#define ENABLE_DEBUG 0
 #include "debug.h"
 
 static bool _proxied = false;
@@ -222,7 +222,6 @@ static void _disc_resp_handler(const gcoap_request_memo_t *memo, coap_pkt_t *pdu
 }
 
 
-uint32_t got_resp_lkup;
 /*
  * Response callback for lookup.
  */
@@ -231,8 +230,6 @@ static void _lookup_resp_handler(const gcoap_request_memo_t *memo, coap_pkt_t *p
 {
     (void)remote;       /* not interested in the source currently */
     
-    got_resp_lkup = xtimer_now_usec();
-
     if (memo->state == GCOAP_MEMO_TIMEOUT) {
         DEBUG("gcoap: timeout for msg ID %02u\n", coap_get_id(pdu));
         lookup_callback(LOOKUP_FAILURE, NULL);
@@ -339,9 +336,6 @@ int wot_coap_put_cli_cert(const sock_udp_ep_t *remote)
 {
     /*creating cbor client cert*/
     DEBUG("\n\n---sending client cert---\n");
-    //uint8_t c_buf[CBOR_BUFSIZE];
-    //uint8_t client_c_buf[100] = {0};
-    //memset(c_buf, 0, CBOR_BUFSIZE);
 
     uint8_t *client_c_buf = (uint8_t *)calloc(CBOR_BUFSIZE, sizeof(uint8_t));
     int cbor_len = wot_get_cbor_certificate_client(client_c_buf);
@@ -379,8 +373,7 @@ int wot_coap_put_cli_cert(const sock_udp_ep_t *remote)
 }
 #endif /*CONFIG_WOT_CLIENT_CERT_URI*/
 
-//uint32_t prepare_rq_start;
-uint32_t prepare_rq_end;
+
 #ifdef CONFIG_WOT_LOOKUP_CERT_URI
 int wot_lookup_client(char *lookup_name, int (*callback)(int, wot_cert_t *))
 {
@@ -407,11 +400,9 @@ int wot_lookup_client(char *lookup_name, int (*callback)(int, wot_cert_t *))
     DEBUG("buf len:%d\n", cbor_len);
     memcpy(pdu.payload, c_buf, cbor_len);
     len += cbor_len;
-
+    
     lookup_callback = callback;
-    
-    prepare_rq_end = xtimer_now_usec();
-    
+        
     size_t bytes_sent = gcoap_req_send(&buf[0], len, &remote_rd, _lookup_resp_handler, NULL);
     if (bytes_sent > 0) {
         DEBUG("requested lookup cert");

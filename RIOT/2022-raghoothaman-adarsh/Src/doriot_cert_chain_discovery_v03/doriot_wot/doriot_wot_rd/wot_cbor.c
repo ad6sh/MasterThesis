@@ -424,10 +424,6 @@ CborError wot_parse_cbor_cert_client(uint8_t *payload, uint16_t payload_len)
 }
 /*--------------------------lookup interface----------------------------*/
 
-extern uint32_t count_lkup;
-uint32_t crypto_start_time[100];
-uint32_t crypto_end_time[100]; 
-
 #if CONFIG_WOT_USE_CRYPTO_CELL
 int _set_crypto_cell_private_key(CRYS_ECPKI_UserPrivKey_t *crypto_pvt_key)
 {
@@ -469,14 +465,12 @@ static int _wot_create_signature_lookup(uint8_t *cbor_buf_csr, int csr_len, uint
     CRYS_ECDH_TempData_t signOutBuff;
     uint32_t ecdsa_sig_size = ECC_SIGN_LEN;
     _set_crypto_cell_private_key(&UserPrivKey);
-     crypto_start_time[count_lkup]=xtimer_now_usec();
     cryptocell_enable();
 
     ret = CRYS_ECDSA_Sign(rndState_ptr, rndGenerateVectFunc,
                           &SignUserContext, &UserPrivKey, CRYS_ECPKI_HASH_SHA256_mode, cbor_buf_csr,
                           (uint32_t)csr_len, (uint8_t *)&signOutBuff, &ecdsa_sig_size);
     cryptocell_disable();
-    crypto_end_time[count_lkup]=xtimer_now_usec();
     if (ret != SA_SILIB_RET_OK) {
         DEBUG("CRYS_ECDSA_Sign failed with 0x%x \n", ret);
         return 1;
@@ -494,12 +488,10 @@ static int _wot_create_signature_lookup(uint8_t *cbor_buf_csr, int csr_len, uint
     print_hex("hash of client csr : ", hash_cert, (unsigned int)SHA256_DIGEST_LENGTH);
 
     const struct uECC_Curve_t *curve = uECC_secp256r1();
-    crypto_start_time[count_lkup]=xtimer_now_usec();
     if ((uECC_sign(credentials_module.private_key, hash_cert, sizeof(hash_cert), signature,
                    curve)) != 1) {
         DEBUG("\nfailed to sign with private key\n");
     }
-    crypto_end_time[count_lkup]=xtimer_now_usec();
     #endif
     print_hex("selfsign client hash : ", signature, ECC_SIGN_LEN);
     return 0;

@@ -36,7 +36,7 @@ config WOT_STORE_LOOKUP_CERT
 
 config WOT_USE_CRYPTO_CELL
     bool "use hardware accelerators for crypto"
-    default y
+    default n
 
 
 

@@ -7,10 +7,6 @@ EXTERNAL_MODULE_DIRS += $(CURDIR)/../../doriot_wot
 
 USEMODULE += shell
 USEMODULE += shell_commands
-#######following modules are for evaluation##########
-#USEMODULE += ps
-#USEMODULE += schedstatistics
-#USEMODULE += gnrc_icmpv6_echo
 DEVELHELP ?= 1
 #####################################################
 CFLAGS += -DTHREAD_STACKSIZE_MAIN=\(2*THREAD_STACKSIZE_LARGE\)

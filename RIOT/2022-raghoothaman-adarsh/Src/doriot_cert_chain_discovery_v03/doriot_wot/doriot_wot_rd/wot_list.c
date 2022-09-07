@@ -55,10 +55,7 @@ wot_cert_t *wot_cert_find(list_node_t *head, char *name)
 
 wot_cert_t* wot_cert_get(char *name)
 {
-    //int count=0;
     for (list_node_t *n = head.next; n; n = n->next) {
-        //count++;
-        //printf("count:%d\n",count);
         wot_cert_t *node = container_of(n, wot_cert_t, next);
         if (strncmp(node->name, name, sizeof(node->name)) == 0) {
             return node;

@@ -40,7 +40,7 @@ extern CRYS_RND_State_t *rndState_ptr;
 #include "wot_list.h"
 #include "wot_key.h"
 
-#define ENABLE_DEBUG 1
+#define ENABLE_DEBUG 0
 #include "debug.h"
 
 #if (POSIX_C_SOURCE < 200809L && _XOPEN_SOURCE < 700)
@@ -54,8 +54,6 @@ char *strndup(const char *s, size_t n)
 #endif
 
 extern int (*lookup_callback)(int, wot_cert_t *);
-uint32_t c509_start_time;
-uint32_t c509_end_time;
 
 
 void print_hex(char *str, uint8_t *buf, unsigned int size)
@@ -113,7 +111,7 @@ int _set_crypto_cell_private_key(CRYS_ECPKI_UserPrivKey_t *crypto_pvt_key)
         CRYS_ECPKI_DomainID_secp256r1);
     ret = CRYS_ECPKI_BuildPrivKey(pDomain, credentials_module.private_key, (uint32_t)PVT_KEY_SIZE, crypto_pvt_key);
     if (ret != CRYS_OK) {
-        DEBUG("failed to crypt private key\n");
+        DEBUG("failed to copy crypt private key\n");
         return 1;
     }
     else {
@@ -353,7 +351,6 @@ CborError _wot_store_cert(uint8_t *payload, uint16_t payload_len, uint16_t scene
             DEBUG("node name:%s\n", node->name);
         }
         #endif
-        c509_end_time = xtimer_now_usec();
         lookup_callback(0, node);
     }
 
@@ -476,8 +473,6 @@ int _set_crypto_cell_public_key(CRYS_ECPKI_UserPublKey_t *crypto_pub_key, wot_ce
 #endif
 
 
-uint32_t crypto_start_time;
-uint32_t crypto_end_time;
 /**
  * @brief function to check if the received client certificate during lookup is valid
  *
@@ -504,12 +499,10 @@ static int _wot_check_lookup_cbor_cert_valid(uint8_t *cbor_buf_csr, uint8_t cert
     CRYS_ECPKI_UserPublKey_t UserPublKey;
     _set_crypto_cell_public_key(&UserPublKey, node);
 
-    crypto_start_time = xtimer_now_usec();
     cryptocell_enable();
     ret =  CRYS_ECDSA_Verify(&VerifyUserContext, &UserPublKey, CRYS_ECPKI_HASH_SHA256_mode,
                              signature, ECC_SIGN_LEN, cbor_buf_csr, cert_len);
     cryptocell_disable();
-    crypto_end_time = xtimer_now_usec();
     if (ret != SA_SILIB_RET_OK) {
         DEBUG("CRYS_ECDSA_Verify failed with 0x%x \n", ret);
         return 1;
@@ -523,7 +516,6 @@ static int _wot_check_lookup_cbor_cert_valid(uint8_t *cbor_buf_csr, uint8_t cert
     uint8_t hash_cert[SHA256_DIGEST_LENGTH] = { 0 };
     sha256((uint8_t *)cbor_buf_csr, cert_len, hash_cert);
     const struct uECC_Curve_t *curve = uECC_secp256r1();
-    crypto_start_time = xtimer_now_usec();
     if ((uECC_verify(node->pubkey, hash_cert, sizeof(hash_cert), signature, curve)) != 1) {
         DEBUG("invalid certificate\n");
         return 1;
@@ -531,9 +523,7 @@ static int _wot_check_lookup_cbor_cert_valid(uint8_t *cbor_buf_csr, uint8_t cert
     else {
         DEBUG("verified with public key,valid certificate\n");
     }
-    crypto_end_time = xtimer_now_usec();
     #endif
-    //printf("uecc time:%ld,\n", (uecc_end_time - uecc_start_time));
     return 0;
 }
 
@@ -548,10 +538,6 @@ static int _wot_check_lookup_cbor_cert_valid(uint8_t *cbor_buf_csr, uint8_t cert
  */
 CborError wot_parse_cbor_cert_lookup(uint8_t *payload, uint16_t payload_len)
 {
-    /*the tme stamps are just for evaluation,needs to be removed*/
-
-
-    c509_start_time = xtimer_now_usec();
 
     CborParser parser;
     CborValue it;
@@ -632,9 +618,6 @@ CborError wot_parse_cbor_cert_lookup(uint8_t *payload, uint16_t payload_len)
         else {
             DEBUG("valid certificate\n");
             _wot_store_cert(cbor_buf_csr, cert_len, 1);
-            //c509_end_time = xtimer_now_usec();
-            //printf("c509 processing time:%ld,\n", (c509_end_time - c509_start_time));
-
         }
         free(rd_common_name);
         free(cbor_buf_csr);

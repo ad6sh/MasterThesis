@@ -1,43 +1,7 @@
-#include "xtimer.h"
-#include "ps.h"
-#include "sema.h"
-
 #include "doriot_wot_cl.h"
 
 #define ENABLE_DEBUG 0
 #include "debug.h"
-
-extern uint32_t got_resp_lkup;
-extern uint32_t prepare_rq_end;
-extern uint32_t crypto_start_time;
-extern uint32_t crypto_end_time;
-extern uint32_t c509_start_time;
-extern uint32_t c509_end_time;
-uint32_t lkup_request;
-uint32_t lkup_success;
-static sema_t test_sema;
-int lookup_callback_app(int status, wot_cert_t *node);
-
-
-int test_cmd_app(int argc, char **argv)
-{
-    (void)argc;
-    (void)argv;
-    if(argc!=3)
-    {
-        puts("enter test count,name of client");
-        return 1;
-    }
-    sema_create(&test_sema, 0);
-    int count = 0;
-    while (count < atoi(argv[1])) {
-        lkup_request = xtimer_now_usec();
-        wot_lookup_client(argv[2], lookup_callback_app);
-        sema_wait(&test_sema);
-        count++;
-    }
-    return 0;
-}
 
 static int _print_usage_cli(char **argv)
 {
@@ -59,7 +23,7 @@ static int _print_ip(sock_udp_ep_t remote_rd)
     return 0;
 }
 
-static void print_hex(char *str, uint8_t *buf, unsigned int size)
+static void _print_hex(char *str, uint8_t *buf, unsigned int size)
 {
     printf("%s ", str);
     for (unsigned i = 0; i < size; ++i) {
@@ -124,17 +88,9 @@ int lookup_callback_app(int status, wot_cert_t *node)
     switch (status) {
     case LOOKUP_SUCCESS:
         /* successfully received lookup certificate from rd*/
-        lkup_success = xtimer_now_usec();
-        /*printf("tot_lookup time: %ld\n", (lkup_success - lkup_request));
-        printf("req_prepare_time: %ld\n", (prepare_rq_end - lkup_request));
-        printf("RTT+RD: %ld\n", (got_resp_lkup - prepare_rq_end));
-        printf("tot_c509_time: %ld\n", (c509_end_time - c509_start_time));
-        printf("crypto_time: %ld\n", (crypto_end_time - crypto_start_time));*/
-        sema_post(&test_sema);
-        //ps();
-        //puts("lookup success\n");
-        //printf("node name :%s\n", node->name);
-        //print_hex("node public key : ", node->pubkey, (unsigned int)PUB_KEY_SIZE);
+        puts("lookup success\n");
+        printf("node name :%s\n", node->name);
+        _print_hex("node public key : ", node->pubkey, (unsigned int)PUB_KEY_SIZE);
         #if !CONFIG_WOT_STORE_LOOKUP_CERT
         free(node);
         #endif
@@ -142,7 +98,6 @@ int lookup_callback_app(int status, wot_cert_t *node)
     case LOOKUP_FAILURE:
         /*failed get lookup certificate from rd*/
         puts("lookup failure \n");
-        sema_destroy(&test_sema);
         break;
     default:
         break;
@@ -194,8 +149,6 @@ int client_cmd_app(int argc, char **argv)
             return _print_usage_cli(argv);
         }
         else {
-            lkup_request = xtimer_now_usec();
-            //ps();
             wot_lookup_client(argv[2], lookup_callback_app);
         }
     }
@@ -204,15 +157,6 @@ int client_cmd_app(int argc, char **argv)
     }
     return 0;
 
-}
-
-static void _print_hex(char *str, uint8_t *buf, unsigned int size)
-{
-    printf("%s ", str);
-    for (unsigned i = 0; i < size; ++i) {
-        printf("%02X ", (unsigned)buf[i]);
-    }
-    puts("\n\n");
 }
 
 int find_cert_cmd_app(int argc, char **argv)
